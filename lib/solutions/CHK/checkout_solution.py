@@ -83,17 +83,17 @@ def checkout(skus):
     return total_cost
 
 
-def calculate_double_offer_cost(num, base_price, offer_1, offer_2):
+def calculate_double_offer_cost(num, base_price, best_offer, lesser_offer):
     
-    offer_2_num = int(num / offer_2[0])
-    remainder = num - offer_2_num * offer_2[0]
-    #print(fives_of_A, remainder_A)
+    best_offer_num = int(num / best_offer[0])
+    remainder = num - best_offer_num * best_offer[0]
+    print(best_offer_num, remainder)
 
-    offer_1_num = int(num / offer_1[0])
-    remainder = num - offer_1_num * offer_1[0]
-    #print(threes_of_A, remainder_A)
+    lesser_offer_num = int(num / lesser_offer[0])
+    remainder = num - lesser_offer_num * lesser_offer[0]
+    print(lesser_offer_num, remainder)
 
-    return offer_2_num * offer_2[1] + offer_1_num * offer_1[1] + remainder * base_price
+    return best_offer_num * best_offer[1] + lesser_offer_num * lesser_offer[1] + remainder * base_price
 
 
 def calculate_single_offer_cost(num, base_price, required_num, offer_price):
@@ -155,6 +155,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
