@@ -8,11 +8,17 @@ non_offer_prices = {
     ("D", 15),
     ("E", 40),
     ("G", 20),
-    ("I", 20),
+    ("I", 35),
     ("J", 60),
     ("L", 90),
-    ("J", 60),
-    ("K", 80),
+    ("M", 15),
+    ("O", 10),
+    ("S", 30),
+    ("T", 20),
+    ("W", 20),
+    ("X", 90),
+    ("Y", 10),
+    ("Z", 50),
 }
 
 
@@ -26,6 +32,8 @@ def checkout(skus):
         print("invalid input")
         return -1
 
+    for product in non_offer_prices
+    
     num_A = skus.count('A')
     num_B = skus.count('B')
     num_C = skus.count('C')
@@ -82,6 +90,7 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
+
 
 
 
