@@ -52,16 +52,21 @@ def checkout(skus):
         print("invalid input")
         return -1
 
-    non_offer_cost = 0
+    total_cost = 0
 
     for product in non_offer_prices:
         num_product = skus.count(product[0])
         product_cost = num_product * product[1]
-        non_offer_cost += product_cost
+        total_cost += product_cost
     
     for product in double_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_double_offer_cost(num_product, product[1], product[2], product[3])
+        total_cost += product_cost
+
+    for product in get_one_free_offers:
+        num_product = skus.count(product[0])
+        product_cost = ca
 
     cost_A = calculate_A(num_A)
     cost_B = calculate_B(num_B, num_E)
@@ -86,7 +91,7 @@ def calculate_double_offer_cost(num, base_price, offer_1, offer_2):
     remainder = num - offer_1_num * offer_1[0]
     #print(threes_of_A, remainder_A)
 
-    return offer_2_num * offer_2[1] + offer_1 * 130 + remainder_A * 50
+    return offer_2_num * offer_2[1] + offer_1_num * offer_1[1] + remainder * base_price
 
 
 def calculate_B(num_B, num_E):
@@ -104,11 +109,12 @@ def calculate_B(num_B, num_E):
 
     return (int(num_B / 2) * 45) + (num_B % 2 * 30)
 
-def calculate_F(num_F):
+def calculate_get_one_free_cost(num, base_cost, required_num):
 
-    free_F = int(num_F / 3)
-    num_F = num_F - free_F
+    free = int(num / required_num)
+    num = num - free
 
     #print(num_F)
 
-    return num_F * 10
+    return num * base_cost
+
