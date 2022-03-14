@@ -11,7 +11,7 @@ non_offer_prices = {
     ("I", 35),
     ("J", 60),
     ("L", 90),
-    ("M", 15),
+    ("N", 40),
     ("O", 10),
     ("R", 50),
     ("S", 30),
@@ -30,10 +30,15 @@ double_offers = [
 
 single_offers = [
     ("K", 2, 150),
-    ("P", 5, 200)
+    ("P", 5, 200),
+    ("U", 3, 40)
 ]
 
+inter_dependant_offers = ["B", "M", "Q"]
 
+get_one_free_offers = [
+    ("F", 2, 10),
+]
 
 def checkout(skus):
 
@@ -108,6 +113,7 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
+
 
 
 
