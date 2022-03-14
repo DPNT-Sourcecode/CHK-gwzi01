@@ -24,7 +24,7 @@ double_offers = [
 ]
 
 single_offers = [
-    ("K", 80, 2, 150),
+    ("K", 70, 2, 120),
     ("P", 50, 5, 200),
 ]
 
@@ -209,6 +209,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
