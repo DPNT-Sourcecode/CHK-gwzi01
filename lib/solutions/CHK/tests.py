@@ -5,7 +5,7 @@ from checkout_solution import checkout
 class TestCheckout(unittest.TestCase):
     def test_checkout_with_valid_input(self):
         inputs_and_outputs = [
-            ("AAABBBCCCDDD", 310),
+            ("AAABBBCCCDDDEE", 360),
             ("A", 50),
             ("ABCD", 115),
             ("AAAAAAABB", 355)
