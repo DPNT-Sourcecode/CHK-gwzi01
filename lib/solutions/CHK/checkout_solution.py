@@ -18,11 +18,17 @@ def checkout(skus):
     num_D = skus.count('D')
     num_E = skus.count('E')
 
-    cost_A = (int(num_A / 3) * 130) + (num_A % 3 * 50)
+    fives_of_A = int(num_A / 5)
+    threes_of_A = int((num_A - fives_of_A * 5) / 3)
+    remainder_of_A = int()
+
+
+
     cost_B = (int(num_B / 2) * 45) + (num_B % 2 * 30)
     cost_C = 20 * num_C
     cost_D = 15 * num_D
     
     return cost_A + cost_B + cost_C + cost_D
+
 
 
