@@ -7,17 +7,23 @@ class TestCheckout(unittest.TestCase):
         inputs_and_outputs = [
             ("AAABBBCCCDDD", 310),
             ("A", 50),
-            ("ABCD", )
+            ("ABCD", 115),
+            ("AAAAAAABB", 355)
         ]
 
         for case in inputs_and_outputs:
-            self.assertEqual(hello(case[0]), case[1])
+            self.assertEqual(checkout(case[0]), case[1])
 
-    def test_non_string_raises_error(self):
-        with self.assertRaises(Exception) as context:
-            hello(2)
+    def test_checkout_with_invalid_input(self):
+        inputs_and_outputs = [
+            ("ABCDE", -1),
+            ("abc", -1),
+            (26, -1),
+            ("", -1)
+        ]
 
-        self.assertTrue("A string must be passed to this function" in str(context.exception))
+        for case in inputs_and_outputs:
+            self.assertEqual(checkout(case[0]), case[1])
 
 if __name__ == '__main__':
     unittest.main()

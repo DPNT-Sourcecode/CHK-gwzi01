@@ -6,7 +6,7 @@ def checkout(skus):
     # Could do with knowing what format the input is, unless this is deliberate! :)
     # Assuming the input string is going to look something like AABBBBC etc
 
-    if not re.findall('[^A-D]', skus):
+    if not re.findall('[^A-D]', skus) or not re.findall('[A-D'):
         print("invalid input")
         return -1
     
