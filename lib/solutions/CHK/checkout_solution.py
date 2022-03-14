@@ -31,6 +31,10 @@ def checkout(skus):
 
 def calculate_A(num_A):
     
+    if num_A % 3 == 0:
+        return (num_A / 3) * 
+
+
     fives_of_A = int(num_A / 5)
     remainder_A = num_A - fives_of_A * 5
     
@@ -38,6 +42,7 @@ def calculate_A(num_A):
     remainder_A = remainder_A - threes_of_A * 3
 
     return fives_of_A * 200 + threes_of_A * 130 + remainder_A * 50
+
 
 
 
