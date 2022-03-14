@@ -33,9 +33,11 @@ def calculate_A(num_A):
     
     fives_of_A = int(num_A / 5)
     remainder_A = num_A - fives_of_A * 5
+    print(fives_of_A, remainder_A)
 
     threes_of_A = int(remainder_A / 3)
     remainder_A = remainder_A - threes_of_A * 3
+    print(threes_of_A, remainder_A)
 
     return fives_of_A * 200 + threes_of_A * 130 + remainder_A * 50
 
@@ -47,6 +49,8 @@ def calculate_B(num_B, num_E):
     if num_E >= 2:
         free_B = int(num_E / 2)
 
-    num_B = num_B = free_B
+    num_B = num_B - free_B
+    print(num_B, free_B)
 
     return (int(num_B / 2) * 45) + (num_B % 2 * 30)
+
