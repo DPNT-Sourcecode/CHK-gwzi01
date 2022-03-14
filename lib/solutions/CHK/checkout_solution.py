@@ -22,7 +22,9 @@ def checkout(skus):
     cost_B = calculate_B(num_B, num_E)
     cost_C = 20 * num_C
     cost_D = 15 * num_D
-    cost_E = num_E * 40
+    cost_E = 40 * num_E
+
+    print(cost_A, cost_B, cost_C, cost_D, cost_E)
     
     return cost_A + cost_B + cost_C + cost_D + cost_E
 
@@ -48,9 +50,3 @@ def calculate_B(num_B, num_E):
     num_B = num_B = free_B
 
     return (int(num_B / 2) * 45) + (num_B % 2 * 30)
-
-
-
-
-
-
