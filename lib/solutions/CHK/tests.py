@@ -25,7 +25,7 @@ class TestCheckout(unittest.TestCase):
 
     def test_checkout_with_invalid_input(self):
         inputs_and_outputs = [
-            ("ABCDX", -1),
+            ("ABCD2", -1),
             ("abc", -1),
             (26, -1),
         ]

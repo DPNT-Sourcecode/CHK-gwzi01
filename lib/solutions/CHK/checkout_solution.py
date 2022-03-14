@@ -74,9 +74,10 @@ def checkout(skus):
         total_cost += product_cost
 
     total_cost += calculate_B(skus.count("B"), skus.count("E"))
-    total_cost += calculate_B(skus.count("B"), skus.count("E"))
+    total_cost += calculate_M(skus.count("M"), skus.count("N"))
+    total_cost += calculate_Q(skus.count("Q"), skus.count("R"))
 
-    #print(skus)
+    print(skus)
     #print(cost_A, cost_B, cost_C, cost_D, cost_E, cost_F)
     
     return total_cost
@@ -154,6 +155,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
