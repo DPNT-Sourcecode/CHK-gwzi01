@@ -83,7 +83,7 @@ def checkout(skus):
     return total_cost
 
 
-def calculate_double_offer_cost(num, base_price, best_offer, lesser_offer):
+def calculate_double_offer_cost(num, base_price, lesser_offer, best_offer):
     
     best_offer_num = int(num / best_offer[0])
     remainder = num - best_offer_num * best_offer[0]
@@ -155,6 +155,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
