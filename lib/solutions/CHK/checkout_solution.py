@@ -17,12 +17,14 @@ def checkout(skus):
     num_C = skus.count('C')
     num_D = skus.count('D')
     num_E = skus.count('E')
+    num_F = skus.count('E')
 
     cost_A = calculate_A(num_A)
     cost_B = calculate_B(num_B, num_E)
     cost_C = 20 * num_C
     cost_D = 15 * num_D
     cost_E = 40 * num_E
+    cost_F = calculate_F(num_F)
 
     print(cost_A, cost_B, cost_C, cost_D, cost_E)
     
@@ -56,6 +58,11 @@ def calculate_B(num_B, num_E):
     #print(num_B, free_B)
 
     return (int(num_B / 2) * 45) + (num_B % 2 * 30)
+
+def calculate_F(num_F):
+
+    
+
 
 
 

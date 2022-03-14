@@ -14,6 +14,10 @@ class TestCheckout(unittest.TestCase):
             ("ABCDE", 155),
             ("AAAAAAABB", 345),
             ("EE", 80)
+            ("AAABBBCCCDDDEEFF", 380),
+            ("AAABBBCCCDDDEEFFF", 380),
+            ("FFFF", 30),
+            ("FFFFFF", 40)
         ]
 
         for case in inputs_and_outputs:
@@ -31,4 +35,5 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
