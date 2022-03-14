@@ -6,7 +6,7 @@ def checkout(skus):
     # Could do with knowing what format the input is, unless this is deliberate! :)
     # Assuming the input string is going to look something like AABBBBC etc
 
-    if not re.findall('[^A-D]', skus) or not re.findall('[A-D'):
+    if re.findall('[^A-D]', skus) or not re.findall('[A-D]', skus):
         print("invalid input")
         return -1
     
@@ -20,6 +20,8 @@ def checkout(skus):
     cost_C = 20 * num_C
     cost_D = 20 * num_D
     
+    return cost_A + cost_B + cost_C + cost_D
+
 
 
 
