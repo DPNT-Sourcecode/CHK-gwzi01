@@ -38,6 +38,8 @@ get_one_free_offers = [
     ("U", 40, 4)
 ]
 
+group_offers
+
 inter_dependant_offers = ["B", "M", "Q"]
 
 
@@ -164,5 +166,6 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
