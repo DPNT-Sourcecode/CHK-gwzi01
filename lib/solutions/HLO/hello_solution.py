@@ -8,6 +8,3 @@ def hello(friend_name):
         raise TypeError("A string must be passed to this function")
     else:
         return "Hello, {}!".format(friend_name)
-
-
-
