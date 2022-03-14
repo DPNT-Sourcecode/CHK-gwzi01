@@ -5,7 +5,7 @@ from hello_solution import hello
 class TestHelloWorld(unittest.TestCase):
     def test_hello_world_with_string(self):
         inputs_and_outputs = [
-            ("John", "Hello, World!"),
+            ("John", "Hello, John!"),
             ("Dave", "Hello, World!"),
         ]
 
@@ -20,4 +20,5 @@ class TestHelloWorld(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
 
