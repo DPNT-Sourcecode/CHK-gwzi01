@@ -3,8 +3,6 @@ import re
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    # Could do with knowing what format the input is, unless this is deliberate! :)
-    # Assuming the input string is going to look something like AABBBBC etc
 
     if not isinstance(skus, str):
         print("invalid input")
@@ -26,4 +24,5 @@ def checkout(skus):
     cost_D = 15 * num_D
     
     return cost_A + cost_B + cost_C + cost_D
+
 
