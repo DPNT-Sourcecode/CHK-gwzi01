@@ -6,10 +6,17 @@ def checkout(skus):
     # Could do with knowing what format the input is, unless this is deliberate! :)
     # Assuming the input string is going to look something like AABBBBC etc
 
-    A_matches = re.search('\dA')
-    B_matches = re.search('\dB')
-    C_matches = re.search('\dB')
-    D_matches = re.search('\dB')
+    if not re.findall('[^A-D]', skus):
+        print("invalid input")
+        return -1
+    
+    num_A = skus.count('A')
+    num_B = skus.count('B')
+    num_C = skus.count('C')
+    num_D = skus.count('D')
+
+    
+
 
 
 
