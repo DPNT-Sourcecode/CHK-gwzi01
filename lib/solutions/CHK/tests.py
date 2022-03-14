@@ -6,7 +6,7 @@ class TestCheckout(unittest.TestCase):
     def test_checkout_with_valid_input(self):
         inputs_and_outputs = [
             ("AAABBBCCCDDDEE", 360),
-            ("A", 130),
+            ("A", 50),
             ("AAA", 130),
             ("AAAAA", 200),
             ("AAAAAA", 250),
