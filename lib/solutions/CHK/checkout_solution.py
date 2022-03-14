@@ -2,16 +2,22 @@ import re
 
 # noinspection PyUnusedLocal
 # skus = unicode string
+
+products = {
+    "A": {}
+}
+
+
 def checkout(skus):
 
     if not isinstance(skus, str):
         print("invalid input")
         return -1        
 
-    if re.findall('[^A-F]', skus):
+    if re.findall('[^A-Z]', skus):
         print("invalid input")
         return -1
-    
+
     num_A = skus.count('A')
     num_B = skus.count('B')
     num_C = skus.count('C')
@@ -68,10 +74,3 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
-
-
-
-
-
-
-
