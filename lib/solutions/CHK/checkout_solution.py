@@ -26,7 +26,7 @@ def checkout(skus):
     cost_E = 40 * num_E
     cost_F = calculate_F(num_F)
 
-    print(cost_A, cost_B, cost_C, cost_D, cost_E)
+    print(cost_A, cost_B, cost_C, cost_D, cost_E, cost_F)
     
     return cost_A + cost_B + cost_C + cost_D + cost_E + cost_F
 
@@ -61,10 +61,11 @@ def calculate_B(num_B, num_E):
 
 def calculate_F(num_F):
 
-        free_F = int(num_F / 3)
-        num_F = num_F - free_F
+    free_F = int(num_F / 3)
+    num_F = num_F - free_F
 
-        return num_F * 10
+    return num_F * 10
+
 
 
 
