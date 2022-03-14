@@ -13,7 +13,10 @@ class TestHelloWorld(unittest.TestCase):
             self.assertEqual(hello(case[0]), case[1])
 
     def test_non_string_raises_error(self):
-        with self.assertRaises()
+        with self.assertRaises(Exception) as context:
+            hello(2)
+
+        self.assertTrue("A string must be passed to this function" in str(context.exception))
 
 if __name__ == '__main__':
     unittest.main()
