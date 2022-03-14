@@ -38,20 +38,23 @@ get_one_free_offers = [
     ("U", 40, 4)
 ]
 
-group_offers = (
-    "STXYZ": {
-        "base_prices": {
-            "S": 20,
-            "T": 20,
-            "X": 17,
-            "Y": 20,
-            "Z": 21
-        },
-        "offer": {
-            "number
+group_offers = [
+    {
+        "STXYZ": {
+            "base_prices": {
+                "S": 20,
+                "T": 20,
+                "X": 17,
+                "Y": 20,
+                "Z": 21
+            },
+            "offer": {
+                "required_number": 3,
+                "discount_price": 45
+            }
         }
     }
-)
+]
 
 inter_dependant_offers = ["B", "M", "Q"]
 
@@ -179,6 +182,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
