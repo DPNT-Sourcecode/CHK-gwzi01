@@ -53,6 +53,8 @@ def checkout(skus):
 
     total_cost = 0
 
+    print("\n\n\n\n" + skus)
+
     for product in non_offer_prices:
         num_product = skus.count(product[0])
         product_cost = num_product * product[1]
@@ -78,14 +80,11 @@ def checkout(skus):
         print("bogof", total_cost)
 
     total_cost += calculate_B(skus.count("B"), skus.count("E"))
-    print(total_cost)
+    print("B", total_cost)
     total_cost += calculate_M(skus.count("M"), skus.count("N"))
-    print(total_cost)
+    print("M", total_cost)
     total_cost += calculate_Q(skus.count("Q"), skus.count("R"))
-    print(total_cost)
-
-    print(skus)
-    #print(cost_A, cost_B, cost_C, cost_D, cost_E, cost_F)
+    print("Q", total_cost)
     
     return total_cost
 
@@ -96,8 +95,8 @@ def calculate_double_offer_cost(num, base_price, lesser_offer, best_offer):
     remainder = num - best_offer_num * best_offer[0]
     print(best_offer_num, remainder)
 
-    lesser_offer_num = int(num / lesser_offer[0])
-    remainder = num - lesser_offer_num * lesser_offer[0]
+    lesser_offer_num = int(remainder / lesser_offer[0])
+    remainder = remainder - lesser_offer_num * lesser_offer[0]
     print(lesser_offer_num, remainder)
 
     return best_offer_num * best_offer[1] + lesser_offer_num * lesser_offer[1] + remainder * base_price
@@ -165,12 +164,3 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
-
-
-
-
-
-
-
-
-
