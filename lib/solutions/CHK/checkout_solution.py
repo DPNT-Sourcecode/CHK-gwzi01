@@ -33,6 +33,7 @@ get_one_free_offers = [
     ("U", 40, 4)
 ]
 
+# base
 group_offers = [
     {
         "STXYZ": {
@@ -138,6 +139,10 @@ def calculate_get_one_free_cost(num, base_cost, required_num):
 
 def calculate_group_offer_cost(skus, offer):
 
+    total_number = 0
+    
+    for product in offer["base_prices"]:
+        total_number += skus.count(product)
 
 
 def calculate_B(num_B, num_E):
@@ -184,6 +189,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
