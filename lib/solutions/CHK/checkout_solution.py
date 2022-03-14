@@ -41,7 +41,6 @@ get_one_free_offers = [
 inter_dependant_offers = ["B", "M", "Q"]
 
 
-
 def checkout(skus):
 
     if not isinstance(skus, str):
@@ -124,6 +123,18 @@ def calculate_B(num_B, num_E):
     #print(num_B, free_B)
 
     return (int(num_B / 2) * 45) + (num_B % 2 * 30)
+
+
+def calculate_M(num_M, num_N):
+
+    if num_M == 0:
+        return 0
+
+    free_M = 0
+
+    if num_N >= 3:
+        free_M = num_M - int(num_M / 3)
+
 
 
 
