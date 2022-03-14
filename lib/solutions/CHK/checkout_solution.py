@@ -29,8 +29,8 @@ double_offers = [
 ]
 
 single_offers = [
-    ("K", 2, 150),
-    ("P", 5, 200),
+    ("K", 80, 2, 150),
+    ("P", 50, 5, 200),
 ]
 
 get_one_free_offers = [
@@ -64,6 +64,11 @@ def checkout(skus):
         product_cost = calculate_double_offer_cost(num_product, product[1], product[2], product[3])
         total_cost += product_cost
 
+    for product in single_offers:
+        num_product = skus.count(product[0])
+        product_cost = calculate_single_offer_cost(num_product, product[1], product[2], product[3])
+        total_cost += product_cost
+
     for product in get_one_free_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_get_one_free_cost(num_product, product[1], product[2])
@@ -90,11 +95,9 @@ def calculate_double_offer_cost(num, base_price, offer_1, offer_2):
     return offer_2_num * offer_2[1] + offer_1_num * offer_1[1] + remainder * base_price
 
 
-def calculate_single_offer_cost(num, base_price, required_num):
+def calculate_single_offer_cost(num, base_price, required_num, offer_price):
 
-    return int()
-
-
+    return int(num / required_num) * offer_price + (num % required_num) * base_price
 
 
 def calculate_get_one_free_cost(num, base_cost, required_num):
@@ -121,5 +124,6 @@ def calculate_B(num_B, num_E):
     #print(num_B, free_B)
 
     return (int(num_B / 2) * 45) + (num_B % 2 * 30)
+
 
 
