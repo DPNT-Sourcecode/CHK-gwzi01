@@ -28,7 +28,7 @@ def checkout(skus):
 
     print(cost_A, cost_B, cost_C, cost_D, cost_E)
     
-    return cost_A + cost_B + cost_C + cost_D + cost_E
+    return cost_A + cost_B + cost_C + cost_D + cost_E + cost_F
 
 
 def calculate_A(num_A):
@@ -61,7 +61,11 @@ def calculate_B(num_B, num_E):
 
 def calculate_F(num_F):
 
-    
+        free_F = int(num_F / 3)
+        num_F = num_F - free_F
+
+        return num_F * 10
+
 
 
 
