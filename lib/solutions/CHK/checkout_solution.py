@@ -21,6 +21,9 @@ non_offer_prices = {
     ("Z", 50),
 }
 
+double_offers = [
+    ("A", (3, 130), (5, 200)),
+]
 
 def checkout(skus):
 
@@ -32,7 +35,12 @@ def checkout(skus):
         print("invalid input")
         return -1
 
-    for product in non_offer_prices
+    non_offer_cost = 0
+
+    for product in non_offer_prices:
+        num_product = skus.count(product[0])
+        product_cost = num_product * product[1]
+        non_offer_cost += product_cost
     
     num_A = skus.count('A')
     num_B = skus.count('B')
@@ -90,6 +98,7 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
+
 
 
 
