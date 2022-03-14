@@ -15,7 +15,12 @@ def checkout(skus):
     num_C = skus.count('C')
     num_D = skus.count('D')
 
-    
+    cost_C = 20 * num_C
+    cost_D = 20 * num_D
+
+    if num_A >= 3:
+        cost_A = (int(num_A / 3) * 130) + 
+
 
 
 
