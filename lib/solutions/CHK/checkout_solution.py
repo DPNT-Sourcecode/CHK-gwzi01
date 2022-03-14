@@ -150,8 +150,8 @@ def calculate_group_offer_cost(skus, offer):
 
     remainder_cost = 0
 
-    print(counts)
-    print(total_number)
+    #print(counts)
+    #print(total_number)
 
     while remainder > 0:
         for purchased in counts:
@@ -162,7 +162,7 @@ def calculate_group_offer_cost(skus, offer):
                 remainder -= 1
                 break
 
-    return number_of_groups * offer["offer"]["required_number"] + remainder_cost
+    return number_of_groups * offer["offer"]["discount_price"] + remainder_cost
 
 
 def calculate_B(num_B, num_E):
@@ -209,6 +209,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
