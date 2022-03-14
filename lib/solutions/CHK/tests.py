@@ -20,7 +20,7 @@ class TestCheckout(unittest.TestCase):
             ("FFFFFF", 40),
             ("UUU", 120),
             ("STXYZ", 82),
-            ("XXXZ", )
+            ("XXXZ", 62)
         ]
 
         for case in inputs_and_outputs:
@@ -38,3 +38,4 @@ class TestCheckout(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
