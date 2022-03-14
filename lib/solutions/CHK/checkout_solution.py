@@ -35,7 +35,7 @@ single_offers = [
 
 get_one_free_offers = [
     ("F", 10, 3),
-    ("U", 40, 3)
+    ("U", 40, 4)
 ]
 
 inter_dependant_offers = ["B", "M", "Q"]
@@ -53,38 +53,38 @@ def checkout(skus):
 
     total_cost = 0
 
-    print("\n\n\n\n" + skus)
+    #print("\n\n\n\n" + skus)
 
     for product in non_offer_prices:
         num_product = skus.count(product[0])
         product_cost = num_product * product[1]
         total_cost += product_cost
-        print("non offer", total_cost)
+        #print("non offer", total_cost)
     
     for product in double_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_double_offer_cost(num_product, product[1], product[2], product[3])
         total_cost += product_cost
-        print("double offer", total_cost)
+        #print("double offer", total_cost)
 
     for product in single_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_single_offer_cost(num_product, product[1], product[2], product[3])
         total_cost += product_cost
-        print("single_offer", total_cost)
+        #print("single_offer", total_cost)
 
     for product in get_one_free_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_get_one_free_cost(num_product, product[1], product[2])
         total_cost += product_cost
-        print("bogof", total_cost)
+        #print("bogof", total_cost)
 
     total_cost += calculate_B(skus.count("B"), skus.count("E"))
-    print("B", total_cost)
+    #print("B", total_cost)
     total_cost += calculate_M(skus.count("M"), skus.count("N"))
-    print("M", total_cost)
+    ##print("M", total_cost)
     total_cost += calculate_Q(skus.count("Q"), skus.count("R"))
-    print("Q", total_cost)
+    #print("Q", total_cost)
     
     return total_cost
 
@@ -93,11 +93,11 @@ def calculate_double_offer_cost(num, base_price, lesser_offer, best_offer):
     
     best_offer_num = int(num / best_offer[0])
     remainder = num - best_offer_num * best_offer[0]
-    print(best_offer_num, remainder)
+    #print(best_offer_num, remainder)
 
     lesser_offer_num = int(remainder / lesser_offer[0])
     remainder = remainder - lesser_offer_num * lesser_offer[0]
-    print(lesser_offer_num, remainder)
+    #print(lesser_offer_num, remainder)
 
     return best_offer_num * best_offer[1] + lesser_offer_num * lesser_offer[1] + remainder * base_price
 
@@ -164,4 +164,5 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
