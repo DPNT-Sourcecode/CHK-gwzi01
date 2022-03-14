@@ -7,4 +7,5 @@ def hello(friend_name):
     if not isinstance(friend_name, str):
         raise TypeError("A string must be passed to this function")
     else:
-        return "{} says Hello World!".format(friend_name)
+        return "Hello World!".format(friend_name)
+
