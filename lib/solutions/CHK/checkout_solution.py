@@ -12,7 +12,7 @@ non_offer_prices = {
     ("J", 60),
     ("L", 90),
     ("J", 60),
-    
+    ("K", 80),
 }
 
 
@@ -82,6 +82,7 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
+
 
 
 
