@@ -57,25 +57,32 @@ def checkout(skus):
         num_product = skus.count(product[0])
         product_cost = num_product * product[1]
         total_cost += product_cost
+        print("non offer", total_cost)
     
     for product in double_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_double_offer_cost(num_product, product[1], product[2], product[3])
         total_cost += product_cost
+        print("double offer", total_cost)
 
     for product in single_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_single_offer_cost(num_product, product[1], product[2], product[3])
         total_cost += product_cost
+        print("single_offer", total_cost)
 
     for product in get_one_free_offers:
         num_product = skus.count(product[0])
         product_cost = calculate_get_one_free_cost(num_product, product[1], product[2])
         total_cost += product_cost
+        print("bogof", total_cost)
 
     total_cost += calculate_B(skus.count("B"), skus.count("E"))
+    print(total_cost)
     total_cost += calculate_M(skus.count("M"), skus.count("N"))
+    print(total_cost)
     total_cost += calculate_Q(skus.count("Q"), skus.count("R"))
+    print(total_cost)
 
     print(skus)
     #print(cost_A, cost_B, cost_C, cost_D, cost_E, cost_F)
@@ -102,6 +109,9 @@ def calculate_single_offer_cost(num, base_price, required_num, offer_price):
 
 
 def calculate_get_one_free_cost(num, base_cost, required_num):
+
+    if num == 0:
+        return 0
 
     free = int(num / required_num)
     num = num - free
@@ -155,6 +165,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
