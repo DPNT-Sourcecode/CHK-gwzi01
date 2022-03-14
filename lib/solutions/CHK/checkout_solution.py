@@ -14,12 +14,7 @@ non_offer_prices = {
     ("N", 40),
     ("O", 10),
     ("R", 50),
-    ("S", 30),
-    ("T", 20),
     ("W", 20),
-    ("X", 90),
-    ("Y", 10),
-    ("Z", 50),
 }
 
 double_offers = [
@@ -97,6 +92,9 @@ def checkout(skus):
         total_cost += product_cost
         #print("bogof", total_cost)
 
+    for offer in group_offers:
+        total_cost += calculate_group_offer_cost(skus, offer)
+
     total_cost += calculate_B(skus.count("B"), skus.count("E"))
     #print("B", total_cost)
     total_cost += calculate_M(skus.count("M"), skus.count("N"))
@@ -136,6 +134,10 @@ def calculate_get_one_free_cost(num, base_cost, required_num):
     #print(num_F)
 
     return num * base_cost
+
+
+def calculate_group_offer_cost(skus, offer):
+
 
 
 def calculate_B(num_B, num_E):
@@ -182,6 +184,7 @@ def calculate_Q(num_Q, num_R):
     num_Q = num_Q - free_Q
 
     return (int(num_Q / 3) * 80) + (num_Q % 3 * 30)
+
 
 
 
