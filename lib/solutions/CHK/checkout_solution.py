@@ -4,26 +4,15 @@ import re
 # skus = unicode string
 
 non_offer_prices = {
-    "C": 20
-        "price": 20,
-        "offer_function": None
-    },
-    "D": {
-        "price": 15,
-        "offer_function": None
-    },
-    "E": {
-        "price": 40,
-        "offer_function": None
-    },
-    "F": {
-        "price": 10,
-        "offer_function": calculate_F
-    },
-    "G": {
-        "price": 20,
-        "offer_function": calculate_F
-    },
+    ("C", 20),
+    ("D", 15),
+    ("E", 40),
+    ("G", 20),
+    ("I", 20),
+    ("J", 60),
+    ("L", 90),
+    ("J", 60),
+    
 }
 
 
@@ -93,5 +82,6 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
+
 
 
