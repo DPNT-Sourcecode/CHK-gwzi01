@@ -8,7 +8,7 @@ def checkout(skus):
         print("invalid input")
         return -1        
 
-    if re.findall('[^A-E]', skus):
+    if re.findall('[^A-F]', skus):
         print("invalid input")
         return -1
     
@@ -17,7 +17,7 @@ def checkout(skus):
     num_C = skus.count('C')
     num_D = skus.count('D')
     num_E = skus.count('E')
-    num_F = skus.count('E')
+    num_F = skus.count('F')
 
     cost_A = calculate_A(num_A)
     cost_B = calculate_B(num_B, num_E)
@@ -26,7 +26,8 @@ def checkout(skus):
     cost_E = 40 * num_E
     cost_F = calculate_F(num_F)
 
-    print(cost_A, cost_B, cost_C, cost_D, cost_E, cost_F)
+    #print(skus)
+    #print(cost_A, cost_B, cost_C, cost_D, cost_E, cost_F)
     
     return cost_A + cost_B + cost_C + cost_D + cost_E + cost_F
 
@@ -64,7 +65,10 @@ def calculate_F(num_F):
     free_F = int(num_F / 3)
     num_F = num_F - free_F
 
+    #print(num_F)
+
     return num_F * 10
+
 
 
 
