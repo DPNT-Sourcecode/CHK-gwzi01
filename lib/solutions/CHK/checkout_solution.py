@@ -4,7 +4,30 @@ import re
 # skus = unicode string
 
 products = {
-    "A": {}
+    "A": {
+        "price": 50,
+        "offer_function": calculate_A
+    },
+    "B": {
+        "price": 30,
+        "offer_function": calculate_B
+    },
+    "C": {
+        "price": 20,
+        "offer_function": None
+    },
+    "D": {
+        "price": 15,
+        "offer_function": None
+    },
+    "E": {
+        "price": 40,
+        "offer_function": None
+    },
+    "F": {
+        "price": 40,
+        "offer_function": None
+    },
 }
 
 
@@ -74,3 +97,4 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
+
