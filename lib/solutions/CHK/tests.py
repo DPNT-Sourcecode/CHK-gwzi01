@@ -18,7 +18,9 @@ class TestCheckout(unittest.TestCase):
             ("AAABBBCCCDDDEEFFF", 380),
             ("FFFF", 30),
             ("FFFFFF", 40),
-            ("UUU", 120)
+            ("UUU", 120),
+            ("STXYZ", 82),
+            ("XXXZ", )
         ]
 
         for case in inputs_and_outputs:
