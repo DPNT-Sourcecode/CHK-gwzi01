@@ -23,9 +23,9 @@ non_offer_prices = {
 }
 
 double_offers = [
-    ("A", (3, 130), (5, 200)),
-    ("H", (5, 45), (10, 80)),
-    ("V", (2, 90), (3, 130)),
+    ("A", 50, (3, 130), (5, 200)),
+    ("H", 10, (5, 45), (10, 80)),
+    ("V", 50, (2, 90), (3, 130)),
 ]
 
 single_offers = [
@@ -61,7 +61,7 @@ def checkout(skus):
     
     for product in double_offers:
         num_product = skus.count(product[0])
-        product_cost = calculate_double_offer_cost(product[1], product[2])
+        product_cost = calculate_double_offer_cost(num_product, product[1], product[2], product[3])
 
     cost_A = calculate_A(num_A)
     cost_B = calculate_B(num_B, num_E)
@@ -76,17 +76,17 @@ def checkout(skus):
     return cost_A + cost_B + cost_C + cost_D + cost_E + cost_F
 
 
-def calculate_double_offer_cost(num, offer_1, offer2):
+def calculate_double_offer_cost(num, base_price, offer_1, offer_2):
     
-    fives_of_A = int(num / 5)
-    remainder_A = num - fives_of_A * 5
+    offer_2_num = int(num / offer_2[0])
+    remainder = num - offer_2_num * offer_2[0]
     #print(fives_of_A, remainder_A)
 
-    threes_of_A = int(remainder / 3)
-    remainder_A = remainder_A - threes_of_A * 3
+    offer_1_num = int(num / offer_1[0])
+    remainder = num - offer_1_num * offer_1[0]
     #print(threes_of_A, remainder_A)
 
-    return fives_of_A * 200 + threes_of_A * 130 + remainder_A * 50
+    return offer_2_num * offer_2[1] + offer_1 * 130 + remainder_A * 50
 
 
 def calculate_B(num_B, num_E):
@@ -112,12 +112,3 @@ def calculate_F(num_F):
     #print(num_F)
 
     return num_F * 10
-
-
-
-
-
-
-
-
-
